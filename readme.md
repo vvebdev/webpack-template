@@ -1,5 +1,3 @@
-#webpack-5
-
 установка зависимостей:
 ```
 npm i
@@ -22,6 +20,7 @@ npm run build:min
 
 особенности сброки:
 ```
+Webpack 5
 Нативный JS: Babel
 Разметка: Pug
 Стили: Css / Sass / PostCSS
