@@ -7,6 +7,7 @@ import '../styles/fonts/montserrat.scss'
 
 // layouts styles
 import '../styles/layouts/default-layout.sass'
+import '../styles/layouts/layout.sass'
 
 // models styles
 import '../styles/models/example.sass'
