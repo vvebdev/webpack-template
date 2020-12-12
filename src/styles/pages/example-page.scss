@@ -1,0 +1,10 @@
+// using alias example
+// background: url('~img/img.png') = src/images/img.png
+.example-page {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 5px rgba(0,0,0,.2);
+  background: #fff;
+}

@@ -1,0 +1,15 @@
+// using alias example
+// background: url('~img/img.png') = src/images/img.png
+
+.example-view {
+  width: 100%;
+  text-align: center;
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+.example-view__title {
+  font-style: italic;
+}

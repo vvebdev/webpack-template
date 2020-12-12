@@ -1,9 +1,10 @@
-extends ../layouts/default-layout
+extends ../layouts/example-layout
 
 block variables
   - const title = "Main page"
 
 block content
   
-  include ../models/example
-  h1(style="text-align: center") Hello index.pug
+  .example-page
+    include ../views/example-view
+    include ../views/example-view

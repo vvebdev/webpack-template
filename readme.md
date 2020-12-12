@@ -23,7 +23,7 @@ npm run build:min
 Webpack 5
 Нативный JS: Babel
 Разметка: Pug
-Стили: Css / Sass / PostCSS
+Стили: Css / Scss / PostCSS
 ```
 
 псевдонимы:
