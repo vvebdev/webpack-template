@@ -3,10 +3,7 @@ const glob = require('glob');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const TerserWebpackPlugin = require("terser-webpack-plugin");
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   //
@@ -16,7 +13,8 @@ module.exports = {
   //
   output: {
     filename: 'js/[name].[fullhash].js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    clean: true,
   },
   //
   resolve: {
@@ -25,24 +23,20 @@ module.exports = {
       'fonts': path.resolve(__dirname, 'src/fonts'),
     }
   },
-  optimization: {
-    minimizer: [new CssMinimizerPlugin(), new TerserWebpackPlugin()]
-  },
   //
   plugins: [
-    new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
-    //
+    // copy folder to /dist
     new CopyWebpackPlugin({
       patterns: [
         { from: "src/images", to: "images" },
         { from: "public", to: "public" },
       ],
     }),
-    //
+    // extracting css
     new MiniCssExtractPlugin({
       filename: 'css/[name].[fullhash].css',
     }),
-    //
+    // convert pug pages to html
     ...glob.sync('./src/pug/pages/*.pug').map(htmlFile => {
       return new HtmlWebpackPlugin({
         // inject: true,
@@ -63,7 +57,7 @@ module.exports = {
           pretty: true
         }
       },
-      // JavaScript
+      // // JavaScript
       {
         test: /\.js$/i,
         exclude: /node_modules/,

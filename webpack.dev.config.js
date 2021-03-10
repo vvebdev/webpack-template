@@ -3,6 +3,7 @@ const glob = require('glob');
 const { merge } = require('webpack-merge');
 const baseConfig = require('./webpack.config')
 
+// ===============================================
 const historyApiFallbackRewritesGenerator = () => {
   const pages = []
   const rewrites = []
@@ -17,6 +18,7 @@ const historyApiFallbackRewritesGenerator = () => {
   })
   return rewrites
 }
+// ===============================================
 
 const devConfig = merge(baseConfig, {
   devtool: 'source-map',
