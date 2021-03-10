@@ -21,6 +21,7 @@ npm run build:min
 особенности сброки:
 ```
 Webpack 5
+EditorConfig
 Нативный JS: Babel
 Разметка: Pug
 Стили: Css / Scss / PostCSS
