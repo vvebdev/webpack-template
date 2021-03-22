@@ -6,8 +6,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
-  // target: process.env.NODE_ENV === "development" ? "web" : "browserslist",
-  // target: "web",
   //
   entry: {
     main: path.resolve(__dirname, 'src/js')
