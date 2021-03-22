@@ -21,10 +21,11 @@ const historyApiFallbackRewritesGenerator = () => {
 // ===============================================
 
 const devConfig = merge(baseConfig, {
+  target: "web", // fix hot reload
   devtool: 'source-map',
   mode: 'development',
   devServer: {
-    // historyApiFallback: true,
+    historyApiFallback: true,
     historyApiFallback: {
       rewrites: historyApiFallbackRewritesGenerator()
     },
@@ -32,7 +33,7 @@ const devConfig = merge(baseConfig, {
     watchContentBase: true,
     open: true,
     // hot: true,
-    // port: 8080,
+    // port: 8081,
     overlay: {
       warnings: false,
       errors: true

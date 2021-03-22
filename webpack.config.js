@@ -6,6 +6,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
+  // target: process.env.NODE_ENV === "development" ? "web" : "browserslist",
+  // target: "web",
   //
   entry: {
     main: path.resolve(__dirname, 'src/js')
@@ -51,7 +53,7 @@ module.exports = {
     rules: [
       // Pug
       {
-        test: /\.pug$/i, 
+        test: /\.pug$/i,
         loader: 'pug-loader',
         options: {
           pretty: true
@@ -66,12 +68,14 @@ module.exports = {
       // PostCSS, Sass
       {
         test: /\.s[ca]ss$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
+        // use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
       // PostCSS, CSS
       {
         test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
+        // use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
       // Images
       {
