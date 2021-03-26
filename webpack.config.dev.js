@@ -22,24 +22,26 @@ const historyApiFallbackRewritesGenerator = () => {
 
 const devConfig = merge(baseConfig, {
   target: "web", // fix hot reload
-  devtool: 'source-map',
+  devtool: 'inline-source-map',
+  // devtool: 'source-map',
   mode: 'development',
   devServer: {
+    // contentBase: './dist',
+    contentBase: path.resolve(__dirname, './dist'),
+    // watchContentBase: true,
+    open: true,
+    // hot: true,
+    // port: 8081,
     historyApiFallback: true,
     historyApiFallback: {
       rewrites: historyApiFallbackRewritesGenerator()
     },
-    contentBase: path.resolve(__dirname, './dist'),
-    watchContentBase: true,
-    open: true,
-    // hot: true,
-    // port: 8081,
     overlay: {
       warnings: false,
       errors: true
     }
-  },
-  plugins: []
+    // plugins: []
+  }
 })
 
 module.exports = new Promise((resolve, reject) => {

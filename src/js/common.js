@@ -2,4 +2,4 @@ const log = (prop) => {
   console.log(prop)
 }
 
-log('Webpack template by Ivan Strilets')
+log("version: 1.0.0\nwebpack template using pug")

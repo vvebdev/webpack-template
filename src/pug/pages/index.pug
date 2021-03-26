@@ -1,10 +1,7 @@
-extends ../layouts/example-layout
+extends ../layouts/main-layout
 
 block variables
-  - const title = "Main page"
+  - const title = "index page"
 
 block content
-
-  .example-page
-    include ../views/example-view
-    include ../views/example-view
+  include ../models/hello-webpack

@@ -1,4 +1,4 @@
-// sass/scss/css files
-import '../imports/styles'
-// javascript
+// import styles
+import '../styles/index';
+// import common js
 import './common'

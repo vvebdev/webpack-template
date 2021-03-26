@@ -8,14 +8,16 @@ html(lang="ru")
     link(rel="shortcut icon", href="public/favicon.ico", type="image/x-icon")
     title= title
 
-  body.example-layout-body
+  body.main-layout
 
     //- header
-    header.example-layout-header
+    header.main-layout__header
+      include ../models/header
 
-    //- page content
-    main.example-layout-main
+    main.main-layout__content
+      //- page content
       block content
 
     //- footer
-    footer.example-layout-footer
+    footer.main-layout__footer
+      include ../models/footer
