@@ -69,18 +69,12 @@ module.exports = {
         ]
       },
       {
-        test: /\.(woff|woff2|eot|ttf|otf)$/i,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-              publicPath: '../fonts',
-              outputPath: './fonts',
-            }
-          },
-        ]
-      }
+        test: /\.(woff(2)?|ttf|eot)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'fonts/[name][ext]',
+        },
+      },
     ],
   }
 };
