@@ -26,21 +26,14 @@ const devConfig = merge(baseConfig, {
   // devtool: 'source-map',
   mode: 'development',
   devServer: {
-    // contentBase: './dist',
-    contentBase: path.resolve(__dirname, './dist'),
-    // watchContentBase: true,
+    static: ["./public"],
     open: true,
-    // hot: true,
-    // port: 8081,
+    hot: false,
+    liveReload: true,
     historyApiFallback: true,
     historyApiFallback: {
       rewrites: historyApiFallbackRewritesGenerator()
     },
-    overlay: {
-      warnings: false,
-      errors: true
-    }
-    // plugins: []
   }
 })
 
