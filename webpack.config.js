@@ -46,7 +46,15 @@ module.exports = {
       },
       {
         test: /\.pug$/i,
-        use: ["raw-loader", "pug-plain-loader"],
+        use: [
+          "raw-loader",
+          {
+            loader: "pug-plain-loader",
+            options: {
+              pretty: true,
+            },
+          },
+        ],
       },
       {
         test: /\.s[ca]ss$/i,
