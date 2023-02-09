@@ -1,63 +1,29 @@
-$min-xl: 1200px
-$min-lg: 992px
-$min-md: 768px
-$min-sm: 576px
-
-$max-xl: 1199px
-$max-lg: 991px
-$max-md: 767px
-$max-sm: 575px
+$desktop: 1200px
+$laptop: 1000px
+$tablet: 768px
 
 // ============ min-with breakpoints (mobile-first)
-@mixin min-xl
-  @media (min-width: $min-xl)
+@mixin min-desktop()
+  @media (min-width: $desktop)
     @content
 
-@mixin min-lg
-  @media (min-width: $min-lg)
+@mixin min-laptop()
+  @media (min-width: $laptop)
     @content
 
-@mixin min-md
-  @media (min-width: $min-md)
+@mixin min-tablet()
+  @media (min-width: $tablet)
     @content
 
-@mixin min-sm
-  @media (min-width: $min-sm)
-    @content
-
-@mixin min-w($width)
-  @media (min-width: $width)
-    @content
-// =================================
-
-// ============ max-with breakpoints
-@mixin max-xl
-  @media (max-width: $max-xl)
-    @content
-
-@mixin max-lg
-  @media (max-width: $max-lg)
-    @content
-
-@mixin max-md
-  @media (max-width: $max-md)
-    @content
-
-@mixin max-sm
-  @media (max-width: $max-sm)
-    @content
-
-@mixin max-w($width)
-  @media (max-width: $width)
-    @content
-// =================================
+// =================================================
 
 // ============ range breakpoints
-@mixin media-tablet
-  @media (min-width: $min-sm) and (max-width: $max-xl)
+@mixin tablet-only
+  @media (min-width: $tablet) and (max-width: $laptop)
     @content
 
 @mixin media-range($min, $max)
   @media (min-width: $min) and (max-width: $max)
     @content
-// =================================
+
+// =================================================
